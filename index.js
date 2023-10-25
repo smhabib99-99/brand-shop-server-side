@@ -38,6 +38,8 @@ async function run() {
       res.send(result);
     })
 
+    // for post=create data to database
+
     app.post('/product', async(req, res)=>{
       const newProduct = req.body;
       console.log(newProduct);
