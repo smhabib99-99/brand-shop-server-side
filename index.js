@@ -38,6 +38,12 @@ async function run() {
       res.send(result);
     })
 
+
+    app.get('/coffee/:id', async(req,res)=>{
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)}
+    })
+
     // for post=create data to database
 
     app.post('/product', async(req, res)=>{
