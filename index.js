@@ -27,7 +27,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     // from server to node mongodb crud
     const productCollection = client.db('productDB').collection('product');
@@ -50,7 +50,7 @@ async function run() {
 
     app.post('/product', async(req, res)=>{
       const newProduct = req.body;
-      console.log(newProduct);
+      // console.log(newProduct);
       // adding single single product from server to mongodb crud
       const result = await productCollection.insertOne(newProduct);
       res.send(result);
